@@ -1,29 +1,13 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 
-import { upsertViewCount } from '@/lib/supabase'
 
 export const Views = ({ slug }) => {
-  const [viewData, setViewData] = useState(null)
-
-  const upsert = useCallback(async () => {
-    const upsertViewCountData = await upsertViewCount(slug)
-    setViewData(upsertViewCountData)
-  }, [slug])
-
-  useEffect(() => {
-    upsert()
-  }, [upsert])
-
-  if (!viewData?.view_count) return <motion.span key="loading" />
-
   return (
     <motion.div
       key={`${slug}-views-loaded`}
       className="flex items-center gap-1 text-sm"
-      title={`${viewData?.view_count ?? 0} views`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -47,7 +31,6 @@ export const Views = ({ slug }) => {
           strokeWidth="1.5"
         ></circle>
       </svg>
-      <span>{viewData?.view_count ?? 0}</span>
     </motion.div>
   )
 }
