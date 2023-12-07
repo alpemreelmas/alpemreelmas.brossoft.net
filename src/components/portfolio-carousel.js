@@ -65,19 +65,12 @@ const PortfolioCarousel = () => {
 
                 {WORKS.map((obj, index) => (
                     <SwiperSlide key={index} className={"h-full relative flex justify-center items-center w-full "} >
-                        <LightGallery
-                            speed={500}
-                            plugins={[lgZoom,lgThumbnail]}
-                        >
-                        <a href={obj.name} key={index}>
                             <Image
                                 className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage"
                                 src={obj.image}
                                 layout={"fill"}
                                 alt={obj.name}
                             />
-                        </a>
-                        </LightGallery>
                     </SwiperSlide>
                 ))}
 

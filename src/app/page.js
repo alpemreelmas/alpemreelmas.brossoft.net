@@ -30,10 +30,10 @@ export default async function Home() {
                         keystroke, I navigate the realms of FullStack development.`}
                     </p>
                     <p>
-                        Beyond the pixels and lines of code,
+                        {`Beyond the pixels and lines of code,
                         I'm a devoted car enthusiast, a wordsmith embracing simplicity, and a storyteller at heart.
                         Here, on this virtual canvas, I invite you to explore the artifacts of my coding odyssey—where
-                        functionality meets finesse.
+                        functionality meets finesse.`}
                     </p>
                     <Suspense fallback={<LoadingSpinner/>}>
                         <h2 className="mb-4 mt-8">Here some of my works</h2>
