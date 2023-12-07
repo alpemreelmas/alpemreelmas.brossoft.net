@@ -59,7 +59,8 @@ const PortfolioCarousel = () => {
                             <Image
                                 className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage"
                                 src={obj.image}
-                                layout={"fill"}
+                                fill
+                                objectFit={"fill"}
                                 alt={obj.name}
                             />
                     </SwiperSlide>

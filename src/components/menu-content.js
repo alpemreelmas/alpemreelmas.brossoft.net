@@ -10,7 +10,7 @@ export const MenuContent = () => {
         <Link href="/" className="link-card inline-flex items-center gap-2 p-2">
           <img
             src="/assets/me.jpg"
-            alt="Onur Şuyalçınkaya"
+            alt="Alp Emre Elmas"
             width={40}
             height={40}
             loading="lazy"
