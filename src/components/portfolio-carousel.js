@@ -3,15 +3,6 @@ import React, {useRef} from 'react';
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/react';
 import {WORKS} from "@/lib/constants";
 import {Navigation, EffectCoverflow} from "swiper/modules"
-import LightGallery from 'lightgallery/react';
-
-// import styles
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
