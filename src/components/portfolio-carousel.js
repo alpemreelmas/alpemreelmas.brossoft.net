@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import Image from "next/image";
 
 const PortfolioCarousel = () => {
     const swiper = useSwiper();
@@ -56,11 +55,9 @@ const PortfolioCarousel = () => {
 
                 {WORKS.map((obj, index) => (
                     <SwiperSlide key={index} className={"h-full relative flex justify-center items-center w-full "} >
-                            <Image
-                                className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage"
+                            <img
+                                className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage object-fill"
                                 src={obj.image}
-                                fill
-                                objectFit={"fill"}
                                 alt={obj.name}
                             />
                     </SwiperSlide>
