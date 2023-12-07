@@ -91,7 +91,7 @@ export const WORKS = [
     "status": "prod"
   },
   {
-    "image": "/assets/yacht.png",
+    "image": "/assets/solargy.png",
     "link": "#",
     "name": "Solargy",
     "description": "This is CRM application which has blog, project, setting, multi language, service modules. Site was developed using Laravel.",
