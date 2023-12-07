@@ -80,3 +80,54 @@ export const LINKS = [
 
 export const SCROLL_AREA_ID = 'scroll-area'
 export const MOBILE_SCROLL_THRESHOLD = 20
+
+export const WORKS = [
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "https://yacht-photos.com/",
+    "name": "Karezona Photography",
+    "description": "This is CRM application which has blog, portfolio, setting modules. Site was developed using Wordpress.",
+    "image_alt": "Solargy Logo",
+    "status": "prod"
+  },
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "#",
+    "name": "Solargy",
+    "description": "This is CRM application which has blog, project, setting, multi language, service modules. Site was developed using Laravel.",
+    "image_alt": "Solargy Logo",
+    "status": "prod"
+  },
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "#",
+    "name": "QTB",
+    "description": "This is CLI application which is based AI to translate developers languages files. CLI is been developed using golang.",
+    "image_alt": "CLI",
+    "status": "dev"
+  },
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "https://carpediemtour.brossoft.net/",
+    "name": "carpediemtourtransfer",
+    "description": "This is basic portfolio application which has built-in accounting module. This was developed using Laravel.",
+    "image_alt": "carpediemtour.brossoft.net",
+    "status": "prod"
+  },
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "https://agency.brossoft.net",
+    "name": "agency.brossoft.net",
+    "description": "This is landing page for agency website.",
+    "image_alt": "Agency Brossoft Website Picture",
+    "status": "prod"
+  },
+  {
+    "image": "/assets/yatchPic.png",
+    "link": "https://radio.brossoft.net",
+    "name": "radio.brossoft.net",
+    "description": "This is simple radio application based on React",
+    "image_alt": "Radio Brossoft Website Picture",
+    "status": "prod"
+  }
+]

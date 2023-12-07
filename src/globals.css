@@ -17,7 +17,7 @@
 
   html,
   body {
-    @apply bg-white;
+    /*@apply bg-white;*/
   }
 
   html {
@@ -304,3 +304,39 @@
     @apply bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px];
   }
 }
+
+.swiper-slide {
+  width: 100%!important;
+}
+
+/*.swiper-slide-prev ,.swiper-slide-next {
+  background-image: linear-gradient(to right, white, transparent 400px, white 800px);
+  background-size: 800px 100%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}*/
+
+.cover{
+  background: linear-gradient(to left, white, transparent 15%,transparent 85%, white 100%);
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .cover{
+    background: none!important;
+  }
+
+  .slideImage{
+    object-fit: cover;
+  }
+
+}
+
+.swiper {
+  overflow: visible!important;
+}
+
+.slideImage {
+  min-width: 250px;
+}
+

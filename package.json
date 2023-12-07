@@ -29,6 +29,7 @@
     "encoding": "^0.1.13",
     "eslint-config-next": "^13.5.4",
     "framer-motion": "^10.16.4",
+    "lightgallery": "^2.7.2",
     "lucide-react": "^0.284.0",
     "markdown-to-jsx": "^7.3.2",
     "next": "^13.5.4",
@@ -38,6 +39,7 @@
     "react-tweet": "^3.1.1",
     "react-wrap-balancer": "^1.1.0",
     "sugar-high": "^0.5.2",
+    "swiper": "^11.0.5",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.6.8"

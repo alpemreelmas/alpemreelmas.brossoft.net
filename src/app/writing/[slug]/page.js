@@ -51,9 +51,9 @@ export default async function WritingSlug({ params }) {
     dateModified,
     author: {
       '@type': 'Person',
-      name: 'Onur Şuyalçınkaya'
+      name: 'Alp Emre Elmas'
     },
-    url: `https://onur.dev/writing/${slug}`
+    url: `https://alpemreelmas.brossoft.net/writing/${slug}`
   }
 
   return (
