@@ -62,11 +62,8 @@ export async function getPost(slug, preview = isDevelopment) {
         items {
           title
           slug
-          date
-          seo {
-            title
-            description
-          }
+          seoTitle
+          seoDescription
           content {
             json
             links {
@@ -85,19 +82,6 @@ export async function getPost(slug, preview = isDevelopment) {
               entries {
                 inline {
                   sys {
-                    id
-                  }
-                  __typename
-                  ... on ContentEmbed {
-                    title
-                    embedUrl
-                    type
-                  }
-                  ... on CodeBlock {
-                    title
-                    code
-                  }
-                  ... on Tweet {
                     id
                   }
                 }
@@ -122,13 +106,8 @@ export async function getWritingSeo(slug, preview = isDevelopment) {
     `query {
       postCollection(where: { slug: "${slug}" }, preview: ${preview}, limit: 1) {
         items {
-          date
-          seo {
-            title
-            description
-            ogImageTitle
-            ogImageSubtitle
-          }
+          seoTitle
+          seoDescription
           sys {
             firstPublishedAt
             publishedAt
@@ -234,7 +213,7 @@ export async function getPage(slug, preview = isDevelopment) {
 export async function getAllLogbook(preview = isDevelopment) {
   const entries = await fetchGraphQL(
     `query {
-      logbookCollection(order: date_DESC, preview: ${preview}) {
+      logBookCollection(order: date_DESC, preview: ${preview}) {
         items {
           title
           date
@@ -243,8 +222,6 @@ export async function getAllLogbook(preview = isDevelopment) {
             url
             title
             description
-            width
-            height
           }
         }
       }
@@ -252,5 +229,5 @@ export async function getAllLogbook(preview = isDevelopment) {
     preview
   )
 
-  return entries?.data?.logbookCollection?.items ?? []
+  return entries?.data?.logBookCollection?.items ?? []
 }

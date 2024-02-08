@@ -77,7 +77,6 @@ export const getBoldFont = async () => {
  * @returns A boolean value indicating whether the current environment is set to development mode.
  */
 export const isDevelopment = process.env.NODE_ENV === 'development'
-
 /**
  * Sorts an array of objects based on the specified property in ascending order.
  * The function compares the property values in a case-insensitive manner.

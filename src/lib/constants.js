@@ -8,7 +8,6 @@ import {
   PencilLineIcon,
   NavigationIcon,
   Wand2Icon,
-  BookmarkIcon
 } from 'lucide-react'
 
 export const PROFILES = {
@@ -39,7 +38,7 @@ export const PROFILES = {
   },
   youtube: {
     title: 'YouTube',
-    url: 'https://www.youtube.com/c/brossoft',
+    url: 'https://www.youtube.com/@AlpEmreElmas',
     icon: <YoutubeIcon size={16} />
   },
   /*

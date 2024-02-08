@@ -9,7 +9,7 @@ import { getAllLogbook, getPageSeo } from '@/lib/contentful'
 
 async function fetchData() {
   const allLogbook = await getAllLogbook()
-
+  
   const mappedLogbook = []
   allLogbook.map((log) => {
     const year = new Date(log.date).getFullYear()

@@ -1,4 +1,3 @@
-import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
 import { ScrollArea } from '@/components/scroll-area'
@@ -15,8 +14,7 @@ export async function generateStaticParams() {
 }
 
 async function fetchData(slug) {
-  const { isEnabled } = draftMode()
-  const data = await getPost(slug, isDevelopment ? true : isEnabled)
+  const data = await getPost(slug, isDevelopment)
   if (!data) notFound()
 
   return {
@@ -30,13 +28,13 @@ export default async function WritingSlug({ params }) {
 
   const {
     title,
-    date,
-    seo: { title: seoTitle, description: seoDescription },
+    seoTitle,
+    seoDescription,
     content,
     sys: { firstPublishedAt, publishedAt: updatedAt }
   } = data
 
-  const postDate = date || firstPublishedAt
+  const postDate = firstPublishedAt
   const dateString = getDateTimeFormat(postDate)
 
   const datePublished = new Date(postDate).toISOString()
@@ -88,22 +86,22 @@ export async function generateMetadata({ params }) {
   if (!seoData) return null
 
   const {
-    date,
-    seo: { title, description },
+    seoTitle,
+    seoDescription,
     sys: { firstPublishedAt, publishedAt: updatedAt }
   } = seoData
 
   const siteUrl = `/writing/${slug}`
-  const postDate = date || firstPublishedAt
+  const postDate = firstPublishedAt
   const publishedTime = new Date(postDate).toISOString()
   const modifiedTime = new Date(updatedAt).toISOString()
 
   return {
-    title,
-    description,
+    seoTitle,
+    seoDescription,
     openGraph: {
-      title,
-      description,
+      seoTitle,
+      seoDescription,
       type: 'article',
       publishedTime,
       ...(updatedAt && {

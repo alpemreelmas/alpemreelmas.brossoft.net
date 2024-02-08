@@ -1,5 +1,5 @@
 "use client"
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/react';
 import {WORKS} from "@/lib/constants";
 import {Navigation, EffectCoverflow} from "swiper/modules"
@@ -9,13 +9,16 @@ import 'swiper/css/navigation';
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+
 const PortfolioCarousel = () => {
     const swiper = useSwiper();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
     return (
-        <div className={"relative w-full overflow-hidden "}>
+        <div className={"relative w-full overflow-hidden"}>
             <div className={"h-full w-full z-10 cover absolute"}></div>
             <div className="absolute flex justify-between items-center z-20 h-full w-full px-3">
                 <button ref={prevRef} onClick={()=> swiper.slidePrev()} className={"shadow-[-2.0px_2.0px_8.0px_rgba(0,0,0,0.38)] bg-white border border-1 border-solid rounded-2xl flex justify-center items-center"}>
@@ -52,17 +55,15 @@ const PortfolioCarousel = () => {
                     swiper.navigation.update();
                 }}
             >
-
-                {WORKS.map((obj, index) => (
-                    <SwiperSlide key={index} className={"h-full relative flex justify-center items-center w-full "} >
+                    {WORKS.map((obj, index) => (
+                        <SwiperSlide key={index} className={"h-full relative flex justify-center items-center w-full "} >
                             <img
-                                className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage object-fill"
-                                src={obj.image}
-                                alt={obj.name}
-                            />
-                    </SwiperSlide>
-                ))}
-
+                                    className="h-full bg-cover bg-center transition-opacity duration-500 ease-in-out rounded-xl slideImage object-fill"
+                                    src={obj.image}
+                                    alt={obj.name}
+                                />
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </div>
     );
