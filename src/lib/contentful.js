@@ -84,6 +84,12 @@ export async function getPost(slug, preview = isDevelopment) {
                   sys {
                     id
                   }
+                  __typename
+                  ... on CodeBlock {
+                      
+                    title
+                    code
+                  }
                 }
               }
             }
@@ -97,7 +103,7 @@ export async function getPost(slug, preview = isDevelopment) {
     }`,
     preview
   )
-
+  
   return entry?.data?.postCollection?.items?.[0]
 }
 

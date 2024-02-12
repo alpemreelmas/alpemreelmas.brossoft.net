@@ -82,7 +82,7 @@ function options(links) {
       [INLINES.HYPERLINK]: (node, children) => <Link href={node.data.uri}>{children}</Link>,
       [INLINES.EMBEDDED_ENTRY]: (node) => {
         const entry = findInlineEntry(node.data.target.sys.id)
-
+        console.log(entry)
         switch (entry.__typename) {
           case 'ContentEmbed': {
             const { embedUrl, title, type } = entry

@@ -58,7 +58,6 @@ export default async function WritingSlug({ params }) {
     <>
       <ScrollArea className="flex flex-col bg-white" hasScrollTitle>
         <FloatingHeader scrollTitle={title} goBackLink="/writing">
-          <Views slug={slug} />
         </FloatingHeader>
         <div className="content-wrapper">
           <article className="content">
