@@ -330,6 +330,18 @@
     object-fit: cover;
   }
 
+  .flex.flex-1 {
+    display: block !important;
+  }
+
+  .flex.flex-1 .flex {
+    display: flex !important;
+  }
+
+  .mb-4.leading-slacker:has(code) {
+    overflow-x: auto !important;
+  }
+
 }
 
 .swiper {
@@ -339,4 +351,3 @@
 .slideImage {
   min-width: 250px;
 }
-
