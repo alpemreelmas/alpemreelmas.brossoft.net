@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/server'
-
 import { OpenGraphImage } from '@/components/og-image'
 import { getMediumFont, getBoldFont } from '@/lib/utils'
 import { sharedTitle, sharedDescription, sharedImage } from '@/app/shared-metadata'

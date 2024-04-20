@@ -35,6 +35,66 @@ export async function getAllPosts(preview = isDevelopment) {
   return entries?.data?.postCollection?.items ?? []
 }
 
+export async function getAllPortfolios(preview = isDevelopment) {
+  const entries = await fetchGraphQL(
+      `query {
+      portfolioCollection(preview: ${preview}) {
+        items {
+           title
+           slug
+           link
+           description
+           thumbnailsCollection {
+              items {
+                url
+                width
+                height
+              }
+          }
+          sys {
+            firstPublishedAt
+          }
+        }
+      }
+    }`,
+      preview
+  )
+
+  return entries?.data?.portfolioCollection?.items ?? []
+}
+
+export async function getPortfolio(slug, preview = isDevelopment) {
+  const entry = await fetchGraphQL(
+      `query {
+      portfolioCollection(where: { slug: "${slug}" }, preview: ${preview}, limit: 1) {
+        items {
+           title
+           slug
+           link
+           description
+           content {
+            json
+            }
+           thumbnailsCollection {
+              items {
+                url
+                width
+                height
+              }
+          }
+          sys {
+            firstPublishedAt
+          }
+        }
+      }
+    }`,
+      preview
+  )
+
+  return entry?.data?.portfolioCollection?.items?.[0]
+}
+
+
 /* export async function getLast3Posts(preview = isDevelopment) {
   const entries = await fetchGraphQL(
     `query {
@@ -158,6 +218,22 @@ export async function getAllPageSlugs(preview = isDevelopment) {
       }
     }`,
     preview
+  )
+
+  return entries?.data?.pageCollection?.items ?? []
+}
+
+export async function getAllPortfoliosSlug(preview = isDevelopment) {
+  const entries = await fetchGraphQL(
+      `query {
+      portfolioCollection(preview: ${preview}) {
+        items {
+          slug
+          hasCustomPage
+        }
+      }
+    }`,
+      preview
   )
 
   return entries?.data?.pageCollection?.items ?? []
