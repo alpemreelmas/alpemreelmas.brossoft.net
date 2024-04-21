@@ -37,7 +37,7 @@ export default async function Home() {
                     </p>
                     <Suspense fallback={<LoadingSpinner/>}>
                         <h2 className="mb-4 mt-8">Here some of my works</h2>
-                        <div className={"grid grid-cols-4"}>
+                        <div className={"grid md:grid-cols-2 grid-cols-1 gap-4"}>
                             {allPortfolios.map((portfolio, index) => {
                                 return (
                                     <PortfolioLink portfolio={portfolio} key={index} className={"m-0"}/>
