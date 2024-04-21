@@ -168,6 +168,10 @@
   pre code {
     counter-reset: sh-line-number;
   }
+  
+  .carousel-arrow{
+    @apply absolute bg-white border rounded-full p-1 shadow-lg cursor-pointer
+  }
 
   /* .token.important,
   .token.bold {

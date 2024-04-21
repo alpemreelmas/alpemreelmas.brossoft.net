@@ -1,6 +1,6 @@
 module.exports = {
   swcMinify: true,
-  reactStrictMode: true,
+  reactStrictMode: false,
   trailingSlash: false,
   images: {
     domains: ['images.ctfassets.net', 'assets.ctfassets.net'],

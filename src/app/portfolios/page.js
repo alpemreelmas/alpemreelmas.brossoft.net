@@ -1,7 +1,7 @@
 import { ScrollArea } from '@/components/scroll-area'
 import { FloatingHeader } from '@/components/floating-header'
 import { PortfolioLink } from '@/components/portfolio-link';
-import {getPageSeo, getAllPortfolios} from '@/lib/contentful'
+import {getAllPortfolios} from '@/lib/contentful'
 import { getSortedPosts } from '@/lib/utils'
 import {LoadingSpinner} from "@/components/loading-spinner";
 import {Suspense} from "react";
@@ -14,7 +14,7 @@ export default async function Portfolios() {
         <ScrollArea className="flex flex-col">
             <Suspense fallback={<LoadingSpinner/>}>
                     <FloatingHeader title="Portfolios" />
-                    <div className={"m-5 grid grid-cols-4"}>
+                    <div className={"m-5 grid grid-cols-3"}>
                         {sortedPortfolios.map((portfolio, index) => {
                             return (
                                 <PortfolioLink portfolio={portfolio} key={index} />
