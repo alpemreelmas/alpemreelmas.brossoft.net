@@ -1,21 +1,21 @@
 import {Suspense} from 'react'
-
 import {ScrollArea} from '@/components/scroll-area'
 import {LoadingSpinner} from '@/components/loading-spinner'
 import {WritingList} from '@/components/writing-list'
 import {FloatingHeader} from '@/components/floating-header'
 import {PageTitle} from '@/components/page-title'
-import {getAllPosts} from '@/lib/contentful'
+import {getAllPortfolios, getAllPosts} from '@/lib/contentful'
 import {getSortedPosts} from '@/lib/utils'
-import PortfolioCarousel from "@/components/portfolio-carousel";
+import {PortfolioLink} from "@/components/portfolio-link";
 
 async function fetchData() {
     const allPosts = await getAllPosts()
-    return {allPosts}
+    const allPortfolios = await getAllPortfolios()
+    return {allPosts, allPortfolios }
 }
 
 export default async function Home() {
-    const {allPosts} = await fetchData()
+    const {allPosts,allPortfolios} = await fetchData()
     const sortedPosts = getSortedPosts(allPosts)
 
     return (
@@ -37,7 +37,13 @@ export default async function Home() {
                     </p>
                     <Suspense fallback={<LoadingSpinner/>}>
                         <h2 className="mb-4 mt-8">Here some of my works</h2>
-                        <PortfolioCarousel />
+                        <div className={"grid grid-cols-4"}>
+                            {allPortfolios.map((portfolio, index) => {
+                                return (
+                                    <PortfolioLink portfolio={portfolio} key={index} className={"m-0"}/>
+                                )
+                            })}
+                        </div>
                     </Suspense>
                     <Suspense fallback={<LoadingSpinner/>}>
                         <h2 className="mb-4 mt-8">Writing</h2>

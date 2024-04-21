@@ -7,7 +7,7 @@ import {
   SparklesIcon,
   PencilLineIcon,
   NavigationIcon,
-  Wand2Icon,
+  Wand2Icon, RocketIcon,
 } from 'lucide-react'
 
 export const PROFILES = {
@@ -74,6 +74,11 @@ export const LINKS = [
     href: '/stack',
     label: 'Stack',
     icon: <Wand2Icon size={16} />
+  },
+  {
+    href: '/portfolios',
+    label: 'Portfolios',
+    icon: <RocketIcon size={16}/>
   },
 ]
 

@@ -4,12 +4,13 @@ import {Button} from '@/components/ui/button.jsx';
 import {Link} from "@/components/link";
 import Carousel from "@/components/ui/carousel.jsx";
 import CarouselSlide from '@/components/ui/carousel-slide.jsx';
+import {cn} from "@/lib/utils";
 
 
-export const PortfolioLink = ({ portfolio }) => {
+export const PortfolioLink = ({ portfolio, className, ...props}) => {
     
     return (
-           <div className="flex flex-col gap-1 border rounded-xl px-4 py-3 text-sm hover:bg-gray-100 min-w-fit">
+           <div className={cn("flex flex-col gap-1 border rounded-xl px-4 py-3 text-sm hover:bg-gray-100 min-w-fit",className)} {...props}>
                <Carousel count={portfolio.thumbnailsCollection.items.length} className={"min-w-[250px]"}>
                    {portfolio.thumbnailsCollection.items.map((pic,index)=> {
                        return (
