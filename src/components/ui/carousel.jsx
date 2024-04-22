@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 import {useState} from "react";
+import {ArrowLeftIcon, ArrowRightIcon} from "lucide-react";
 
 const Carousel = React.forwardRef(({ className, children, count, ...props}, ref) => {
     const [slide, setSlide] = useState(0)
@@ -23,23 +24,13 @@ const Carousel = React.forwardRef(({ className, children, count, ...props}, ref)
     return (
         <div className={cn(className, "flex justify-center items-center relative w-full")} ref={ref} {...props} >
             {count > 1 && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                     className="lucide lucide-arrow-left left-2 carousel-arrow" onClick={prevSlide}>
-                    <path d="m12 19-7-7 7-7"/>
-                    <path d="M19 12H5"/>
-                </svg>
+                <ArrowLeftIcon size={28} className={"carousel-arrow left-1"} onClick={prevSlide}/>
             )}
 
             {childrenWithProps}
 
             {count > 1 && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                     className="lucide lucide-arrow-right right-2 carousel-arrow" onClick={nextSlide}>
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
-                </svg>
+                <ArrowRightIcon size={28} className={"carousel-arrow right-1"} onClick={nextSlide}/>
             )}
         </div>
     )

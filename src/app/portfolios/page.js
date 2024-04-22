@@ -14,7 +14,7 @@ export default async function Portfolios() {
         <ScrollArea className="flex flex-col">
             <Suspense fallback={<LoadingSpinner/>}>
                     <FloatingHeader title="Portfolios" />
-                    <div className={"m-5 grid grid-cols-3 gap-4"}>
+                    <div className={"m-5 grid gap-4 grid-cols-3 max-[1140px]:grid-cols-2 max-[640px]:grid-cols-1"}>
                         {sortedPortfolios.map((portfolio, index) => {
                             return (
                                 <PortfolioLink portfolio={portfolio} key={index} />
