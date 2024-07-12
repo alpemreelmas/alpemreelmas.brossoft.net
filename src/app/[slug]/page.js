@@ -19,8 +19,7 @@ export async function generateStaticParams() {
 }
 
 async function fetchData(slug) {
-  const { isEnabled } = draftMode()
-  const page = await getPage(slug, isDevelopment ? false : isEnabled)
+  const page = await getPage(slug, isDevelopment )
   if (!page) notFound()
   return { page }
 }
