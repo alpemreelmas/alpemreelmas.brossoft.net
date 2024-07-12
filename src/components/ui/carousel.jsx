@@ -24,13 +24,13 @@ const Carousel = React.forwardRef(({ className, children, count, ...props}, ref)
     return (
         <div className={cn(className, "flex justify-center items-center relative w-full")} ref={ref} {...props} >
             {count > 1 && (
-                <ArrowLeftIcon size={28} className={"carousel-arrow left-1"} onClick={prevSlide}/>
+                <ArrowLeftIcon size={28} className={"carousel-arrow left-1 dark:text-black"} onClick={prevSlide}/>
             )}
 
             {childrenWithProps}
 
             {count > 1 && (
-                <ArrowRightIcon size={28} className={"carousel-arrow right-1"} onClick={nextSlide}/>
+                <ArrowRightIcon size={28} className={"carousel-arrow right-1 dark:text-black"} onClick={nextSlide}/>
             )}
         </div>
     )

@@ -8,6 +8,7 @@ import { SideMenu } from '@/components/side-menu'
 import { MenuContent } from '@/components/menu-content'
 import { PROFILES } from '@/lib/constants'
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata'
+import {ThemeProvider} from "next-themes";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -30,8 +31,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={`${interFont.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
+      <ThemeProvider defaultTheme={"light"} attribute={"class"} enableSystem={true} themes={['light', 'dark']}>
         {/* eslint-disable-next-line react/no-unknown-property */}
-        <main vaul-drawer-wrapper="" className="min-h-screen bg-white">
+        <main vaul-drawer-wrapper="" className="min-h-screen bg-white dark:bg-dark-bg-side">
           {isEnabled && (
             <div className="absolute bottom-0 left-0 right-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
               <div className="flex items-center gap-2">
@@ -52,6 +54,7 @@ export default async function RootLayout({ children }) {
           data-host="https://api.tinybird.co"
           data-token={process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}
         />
+      </ThemeProvider>
       </body>
     </html>
   )

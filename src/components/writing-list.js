@@ -55,11 +55,11 @@ export const WritingList = ({ items }) => {
                 return (
                   <li
                     key={slug}
-                    className="group/list-item grid grid-cols-6 p-0 group-hover/list-wrapper:text-gray-300"
+                    className="group/list-item grid grid-cols-6 p-0 group-hover/list-wrapper:text-gray-300 dark:group-hover/list-wrapper:text-gray-600"
                   >
                     <span
                       className={cn(
-                        'pointer-events-none col-span-1 hidden items-center transition-colors group-hover/list:text-gray-700 md:grid',
+                        'pointer-events-none col-span-1 hidden items-center transition-colors group-hover/list:text-gray-700 dark:group-hover/list:text-gray-500 md:grid',
                         itemIndex === 0 && 'border-t border-gray-200'
                       )}
                     >
@@ -67,7 +67,7 @@ export const WritingList = ({ items }) => {
                     </span>
                     <Link
                       href={`/writing/${slug}`}
-                      className="col-span-6 group-hover/list-item:text-gray-700 md:col-span-5"
+                      className="col-span-6 group-hover/list-item:text-gray-400 md:col-span-5"
                     >
                       <span className="grid grid-cols-4 items-center gap-2 border-t border-gray-200 py-4 md:grid-cols-8">
                         <span className="col-span-1 text-left">

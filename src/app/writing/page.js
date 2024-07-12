@@ -4,6 +4,8 @@ import { ScrollArea } from '@/components/scroll-area'
 import { FloatingHeader } from '@/components/floating-header'
 import { getPageSeo, getAllPosts } from '@/lib/contentful'
 import { getSortedPosts, getDateTimeFormat } from '@/lib/utils'
+// eslint-disable-next-line import/no-unresolved
+import Modal from '@/components/ui/modal';
 
 export default async function Writing() {
   const { allPosts } = await fetchData()
@@ -11,6 +13,7 @@ export default async function Writing() {
 
   return (
     <ScrollArea className="flex flex-col lg:hidden">
+      <Modal/>
       <FloatingHeader title="Writing" />
       <div>
         {sortedPosts.map((post) => {
@@ -20,9 +23,9 @@ export default async function Writing() {
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="flex flex-col gap-1 border-b px-4 py-3 text-sm hover:bg-gray-100"
+              className="flex flex-col gap-1 border-b px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
             >
-              <span className="font-medium">{post.title}</span>
+              <span className="font-medium dark:hover:text-black">{post.title}</span>
               <span className="text-slate-500">{formattedDate}</span>
             </Link>
           )

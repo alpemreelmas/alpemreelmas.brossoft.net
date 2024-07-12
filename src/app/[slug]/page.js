@@ -13,7 +13,6 @@ export async function generateStaticParams() {
   const allPages = await getAllPageSlugs()
 
   return allPages
-    .filter((page) => !page.hasCustomPage) // filter out pages that have custom pages, e.g. /journey
     .map((page) => ({
       slug: page.slug
     }))
@@ -21,7 +20,7 @@ export async function generateStaticParams() {
 
 async function fetchData(slug) {
   const { isEnabled } = draftMode()
-  const page = await getPage(slug, isDevelopment ? true : isEnabled)
+  const page = await getPage(slug, isDevelopment ? false : isEnabled)
   if (!page) notFound()
   return { page }
 }
@@ -31,7 +30,9 @@ export default async function PageSlug({ params }) {
   const {
     page: { title, content }
   } = await fetchData(slug)
-
+  
+  /*content.links.assets.block.map((el) => console.log(el))*/
+  
   return (
     <ScrollArea className="flex flex-col" hasScrollTitle>
       <GradientBg />

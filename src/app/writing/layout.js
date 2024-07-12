@@ -26,7 +26,7 @@ export default async function WritingLayout({ children }) {
           </div>
         </Suspense>
       </SideMenu>
-      <div className="lg:bg-dots flex-1">{children}</div>
+      <div className="lg:bg-dots lg:dark:bg-black flex-1">{children}</div>
     </>
   )
 }

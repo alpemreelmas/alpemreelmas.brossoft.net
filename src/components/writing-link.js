@@ -15,7 +15,7 @@ export const WritingLink = ({ post }) => {
     <Link
       key={post.slug}
       href={`/writing/${post.slug}`}
-      className={cn('flex flex-col gap-1 rounded-lg p-2', isActive ? 'bg-black text-white' : 'hover:bg-gray-200')}
+      className={cn('flex flex-col gap-1 rounded-lg p-2', isActive ? 'bg-black text-white dark:bg-white dark:text-black' : 'hover:bg-gray-200 dark:hover:bg-gray-700')}
     >
       <span className="font-medium">{post.title}</span>
       <span className={cn(isActive ? 'text-slate-400' : 'text-slate-500')}>{formattedDate}</span>

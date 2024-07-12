@@ -17,7 +17,7 @@
 
   html,
   body {
-    /*@apply bg-white;*/
+    @apply bg-white dark:bg-dark-bg-side text-black dark:text-white;
   }
 
   html {
@@ -47,7 +47,7 @@
   }
 
   a {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-300 dark:border-slate-500;
   }
 
   button:focus {
@@ -62,7 +62,7 @@
   h1,
   h2,
   h3 {
-    @apply scroll-mt-16 font-semibold tracking-tighter text-black lg:scroll-mt-8;
+    @apply scroll-mt-16 font-semibold tracking-tighter text-black lg:scroll-mt-8 dark:text-white;
   }
 
   h1 {
@@ -105,12 +105,12 @@
   }
 
   hr {
-    @apply my-6 border-gray-200;
+    @apply my-6 border-gray-200 dark:border-gray-700;
   }
 
   img,
   object {
-    @apply rounded-xl border;
+    @apply rounded-xl border dark:border-slate-500;
   }
 
   pre {
@@ -132,11 +132,11 @@
 
 @layer components {
   .link-card {
-    @apply -mx-1.5 -my-1 rounded bg-transparent px-1.5 py-1 transition-colors duration-300 hover:bg-gray-200;
+    @apply -mx-1.5 -my-1 rounded bg-transparent px-1.5 py-1 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700;
   }
 
   .content-wrapper {
-    @apply z-[1] w-full px-6 pb-8 pt-8 lg:px-8 lg:pb-16 lg:pt-24;
+    @apply z-[1] w-full px-6 pb-8 pt-8 lg:px-8 lg:pb-16 lg:pt-24 dark:bg-dark-bg-side;
   }
 
   .content {

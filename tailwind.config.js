@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  darkMode: "class",
   content: ['src/app/**/*.{js,ts,jsx,tsx,mdx,json}', 'src/components/**/*.{js,ts,jsx,tsx,mdx,json}'],
   theme: {
     screens: {
@@ -39,6 +40,9 @@ module.exports = {
       },
       maxHeight: {
         'dynamic-screen': '100dvh'
+      },
+      colors:{
+        "dark-bg-side" : "#1F1F1F"
       }
     }
   },

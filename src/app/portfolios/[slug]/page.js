@@ -26,8 +26,9 @@ export default async function Portfolios({params}) {
             <FloatingHeader title="Portfolios" />
             <Suspense fallback={<LoadingSpinner/>}>
                 <div className="flex md:flex-row flex-col p-4 gap-4 md:items-start items-center">
-                    <div className={"md:w-2/5 w-full h-fit border flex flex-col overflow-hidden p-4 rounded-xl md:sticky lg:top-0 top-[70px] max-w-[540px]"}>
-                        <Carousel count={data.thumbnailsCollection.items.length} className={"min-w-[250px]"}>
+                    <div className={"md:w-2/5 w-full h-fit border dark:border-slate-700 flex flex-col overflow-hidden p-4 rounded-xl md:sticky lg:top-0 top-[70px] max-w-[540px]"}>
+                        {/*TODO: this can be handle by one component DRY*/}
+                        <Carousel count={data.thumbnailsCollection.items.length} className={"min-w-[250px] carousel-image mb-2"}>
                             {data.thumbnailsCollection.items.map((pic,index)=> {
                                 return (
                                     <CarouselSlide index={index} key={index} className={"h-[300px]"} >
@@ -61,7 +62,7 @@ export default async function Portfolios({params}) {
                             )}
 
                     </div>
-                    <div className={"md:w-3/5 w-full"}>
+                    <div className={"md:w-3/5 w-full pl-3"}>
                         <RichText content={data.content} />
                     </div>
                 </div>

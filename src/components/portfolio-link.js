@@ -10,7 +10,7 @@ import {cn} from "@/lib/utils";
 export const PortfolioLink = ({ portfolio, className, ...props}) => {
     
     return (
-           <div className={cn("flex flex-col justify-between gap-1 border rounded-xl px-4 py-3 text-sm hover:bg-gray-100 min-w-fit",className)} {...props}>
+           <div className={cn("flex flex-col justify-between gap-1 border rounded-xl px-4 py-3 text-sm hover:bg-gray-100 min-w-fit dark:border-slate-700 dark:hover:bg-gray-800",className)} {...props}>
                <div className={"flex flex-col"}>
                    <Carousel count={portfolio.thumbnailsCollection.items.length} className={"min-w-[250px] mb-2"}>
                        {portfolio.thumbnailsCollection.items.map((pic,index)=> {

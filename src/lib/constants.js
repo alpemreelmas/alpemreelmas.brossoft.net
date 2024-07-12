@@ -12,20 +12,20 @@ import {
 
 export const PROFILES = {
   twitter: {
-    title: 'Twitter',
+    title: 'X (Twitter)',
     username: 'ElmasAlpEmre',
     url: 'https://twitter.com/intent/user?screen_name=ElmasAlpEmre',
-    icon: <TwitterIcon size={16} />
+    icon: <TwitterIcon size={16} className={"text-black dark:text-white"}/>
   },
   github: {
     title: 'GitHub',
     url: 'https://github.com/alpemreelmas',
-    icon: <GithubIcon size={16} />
+    icon: <GithubIcon size={16} className={"text-black dark:text-white"}/>
   },
   linkedin: {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/alp-emre-elmas/',
-    icon: <LinkedinIcon size={16} />
+    icon: <LinkedinIcon size={16} className={"text-black dark:text-white"}/>
   },
   medium: {
     title: 'Medium',
@@ -34,12 +34,12 @@ export const PROFILES = {
   instagram: {
     title: 'Instagram',
     url: 'https://www.instagram.com/alp_emre_elmas',
-    icon: <InstagramIcon size={16} />
+    icon: <InstagramIcon size={16} className={"text-black dark:text-white"}/>
   },
   youtube: {
     title: 'YouTube',
     url: 'https://www.youtube.com/@AlpEmreElmas',
-    icon: <YoutubeIcon size={16} />
+    icon: <YoutubeIcon size={16} className={"dark:text-white"}/>
   },
   /*
   bluesky: {
@@ -58,32 +58,32 @@ export const LINKS = [
   {
     href: '/',
     label: 'Home',
-    icon: <SparklesIcon size={16} />
+    icon: <SparklesIcon size={16} className={"text-black dark:text-white"}/>
   },
   {
     href: '/writing',
     label: 'Writing',
-    icon: <PencilLineIcon size={16} />
+    icon: <PencilLineIcon size={16} className={"dark:text-white"} />
   },
   {
     href: '/journey',
     label: 'Journey',
-    icon: <NavigationIcon size={16} />
+    icon: <NavigationIcon size={16} className={"dark:text-white"}/>
   },
   {
     href: '/stack',
     label: 'Stack',
-    icon: <Wand2Icon size={16} />
+    icon: <Wand2Icon size={16} className={"dark:text-white"}/>
   },
   {
     href: '/portfolios',
     label: 'Portfolios',
-    icon: <RocketIcon size={16}/>
+    icon: <RocketIcon size={16} className={"dark:text-white"}/>
   },
   {
     href: '/cv.pdf',
     label: 'CV',
-    icon: <FileTextIcon size={16}/>
+    icon: <FileTextIcon size={16} className={"dark:text-white"}/>
   },
 ]
 
