@@ -31,7 +31,7 @@ export default function ThemeToggle() {
     };
 
     return (
-        <div className={"flex justify-center items-center w-full"} style={{zIndex: "9"}}>
+        <div className={"flex justify-center items-center w-full"} style={{zIndex: "9"}} id={"theme-toggle"}>
             <button
                 onClick={toggleTheme}
                 className={`w-14 h-8 flex items-center rounded-full p-1 duration-300 ease-in-out ${

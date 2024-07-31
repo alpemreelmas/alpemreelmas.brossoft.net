@@ -21,6 +21,7 @@ export const NavigationLink = memo(({ href, label, icon }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-between gap-2 rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+        id={""}
       >
         <span className="inline-flex items-center gap-2 font-medium dark:text-white">
           {iconCmp} {label}

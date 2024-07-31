@@ -132,3 +132,37 @@ export const WORKS = [
     "status": "prod"
   },
 ]
+
+export const TOUR_STATES = [
+  {
+    content: "Do you would like to learn what I've got for you here ??",
+    locale: { skip: "IDC :)" },
+    placement: 'center',
+    target: 'body',
+  },
+  {
+    content: "Here I've menu for you! You can find out my writings, portfolios, resume and more...",
+    placement: 'right',
+    target: '#links',
+    before: () => {
+      document.getElementById('links').scrollIntoView({ behavior: 'smooth' });
+    },
+  },
+  {
+    content: 'Those are my profile links such as github, medium, etc...',
+    placement: 'right',
+    styles: {
+      options: {
+        width: 300,
+      },
+    },
+    target: '#profile-links',
+    title: 'My Profile Links',
+  },
+  {
+    content: 'Of course indispensable theme toggle here. For now I\'ve just dark/light mode. Be quite I\'ll add more',
+    placement: 'top',
+    target: '#theme-toggle',
+    title: 'Theme Toggle',
+  },
+];

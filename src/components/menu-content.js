@@ -22,14 +22,14 @@ export const MenuContent = () => {
             <span className="text-gray-600 dark:text-white">Software Developer</span>
           </div>
         </Link>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1" id={"links"}>
           {LINKS.map((link) => (
             <NavigationLink key={link.href} href={link.href} label={link.label} icon={link.icon} />
           ))}
         </div>
       </div>
       <hr/>
-      <div className="flex flex-col gap-2 text-sm">
+      <div className="flex flex-col gap-2 text-sm" id={"profile-links"}>
         <span className="px-2 text-xs font-medium leading-relaxed text-gray-600 dark:text-gray-300">Online</span>
         <div className="flex flex-col gap-1">
           {Object.values(PROFILES).map((profile) => (

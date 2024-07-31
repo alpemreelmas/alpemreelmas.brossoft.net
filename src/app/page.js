@@ -7,6 +7,7 @@ import {PageTitle} from '@/components/page-title'
 import {getAllPortfolios, getAllPosts} from '@/lib/contentful'
 import {getSortedPosts} from '@/lib/utils'
 import {PortfolioLink} from "@/components/portfolio-link";
+import {Tour} from "@/components/tour";
 
 async function fetchData() {
     const allPosts = await getAllPosts()
@@ -20,6 +21,7 @@ export default async function Home() {
 
     return (
         <ScrollArea className="flex flex-col" hasScrollTitle>
+            <Tour/>
             <FloatingHeader scrollTitle="Alp Emre Elmas"/>
             <div className="content-wrapper">
                 <div className="content">
@@ -52,5 +54,6 @@ export default async function Home() {
                 </div>
             </div>
         </ScrollArea>
+        
     )
 }
